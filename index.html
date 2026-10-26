@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Moon Notes</title>
+    <link rel="icon" type="image/png" href="images/moon4-png.jpeg">
+</head>
+<body>
+    <div class="app">
+        
+        <aside class="sidebar">
+            <h1>Moon Notes</h1>
+            <nav>
+                <ul>
+                    <li class="nav-item active" data-page = "home">Home</li>
+                    <li class="nav-item" data-page = "notes">My Notes</li>
+                    <li class="nav-item" data-page = "favorites">Favorite</li>
+                    <li class="nav-item" data-page = "trash">Trash</li>
+                </ul>
+            </nav>
+
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2>Good Eveing</h2>
+                <p>A little space for your thoughts.</p>
+                <p class="date"></p>
+                <button class="new-note-btn" id="new-note-btn">
+                    + New Note
+                </button>
+            </header>
+
+            <section class="notes-section">
+                <h2>My Notes</h2>
+                <div class="note-editor" hidden>
+                    <input type="text" id="input" placeholder="Note title">
+                    <textarea  id="note-text" placeholder="Write your thoughts..."></textarea>
+                    <button class="save-btn">Save Notes</button>
+                </div>
+
+               <div class="notes-container">
+                
+                <div class="create-card">
+                    <span class="plus">+</span>
+                    <p>Create a new note</p>
+                </div>
+               </div>
+                
+            </section>
+
+
+        </main>
+
+    </div>
+   <script src="script.js"></script> 
+</body>
+</html>

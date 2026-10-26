@@ -1,0 +1,425 @@
+/* Apply consistent sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #080F20;
+    color: #E5E5E5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main app layout */
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar navigation */
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background-color: #0D1930;
+    padding: 25px;
+}
+
+.sidebar h1 {
+    color: #E5E5E5;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 12px;
+    margin-bottom: 10px;
+    color: #A5A5A5;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Sidebar hover effect */
+.sidebar li:hover {
+    background-color: #1B3154;
+    color: #FFFFFF;
+}
+
+/* Main content area */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 35px;
+}
+
+/* Header with background image */
+.header {
+    position: relative;
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #303137;
+    background-image: url("images/moon3-header.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.header h2 {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0 0 5px;
+    color: #f5f5f5;
+}
+
+.header p {
+    margin: 15px 0;
+    color: #A5A5A5;
+}
+
+/* Date displayed in the header */
+.header .date {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #777982;
+}
+
+/* Create new note button */
+.new-note-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #D5D5D5;
+    color: #17181C;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.new-note-btn:hover {
+    background-color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* Notes section heading */
+.notes-section h2 {
+    margin: 0 0 22px;
+    font-size: 23px;
+    font-weight: 500;
+    color: #EEEEEE;
+}
+
+/* Responsive grid for note cards */
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    justify-content: center;
+    align-items: center;
+    align-items: stretch;
+}
+
+/* Center the create-note card */
+.create-card.center-card {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 350px;
+    justify-self: center;
+}
+
+/* Individual note card */
+.note-card {
+    position: relative;
+    min-height: 190px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: 22px;
+    background-color: #132442;
+    border: 1px solid #263D60;
+    border-radius: 12px;
+    transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+/* Note card hover effect */
+.note-card:hover {
+    transform: translateY(-5px);
+    border-color: #777982;
+    background: #1B3154;
+}
+
+/* Note title */
+.note-card h3 {
+    margin: 0 0 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #E8E8E8;
+    border-bottom: 1px solid #263D60;
+    padding-bottom: 10px;
+}
+
+/* Note text and long-word wrapping */
+.note-card p {
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+    margin: 0;
+    color: #A5A5A5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Note creation date */
+.note-date {
+    display: block;
+    margin-top: 18px;
+    color: #8FA9D1;
+    font-size: 12px;
+}
+
+/* Create-note card layout */
+.create-card {
+    display: flex;
+    min-height: 190px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    border: 1px dashed #263D60;
+    border-radius: 12px;
+    color: #B8B8BE;
+    cursor: pointer;
+}
+
+.create-card:hover {
+    background-color: #1B3154;
+    border-color: #D5D5D5;
+}
+
+/* Plus symbol on the create card */
+.create-card .plus {
+    font-size: 35px;
+    color: #E5E5E5;
+}
+
+/* Note editor form */
+.note-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 22px;
+    background-color: #0D1930;
+    border: 1px solid #303137;
+    border-radius: 12px;
+}
+
+/* Editor input fields */
+.note-editor input,
+.note-editor textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #1B3154;
+    color: #EEEEEE;
+    border: 1px solid #303137;
+    border-radius: 8px;
+    outline: none;
+}
+
+.note-editor input::placeholder,
+.note-editor textarea:focus {
+    border-color: #92949d;
+}
+
+/* Text area settings */
+.note-editor textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.note-editor input::placeholder,
+.note-editor textarea::placeholder {
+    color: #777982;
+}
+
+/* Save note button */
+.save-btn {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: #D5D5D5;
+    color: #17181C;
+    border-radius: 7px;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.save-btn:hover {
+    background-color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* Tablet layout */
+@media (max-width: 1000px) {
+    .notes-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 650px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        border-radius: none;
+        border-bottom: 1px solid #303137;
+    }
+
+    .sidebar h1 {
+        margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .sidebar li {
+        margin-bottom: 0;
+        padding: 8px 12px;
+    }
+
+    .main-content {
+        padding: 22px 16px;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .notes-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Keep the editor hidden when required */
+.note-editor[hidden] {
+    display: none !important;
+}
+
+/* Action buttons inside each note */
+.card-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+/* Delete or trash button */
+.deleteBtn {
+    padding: 4px 8px;
+    background-color: transparent;
+    color: #B8B8BE;
+    border: 1px solid #555760;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deleteBtn:hover {
+    background-color: #8b3038;
+    color: #FFFFFF;
+    border-color: #8b3038;
+}
+
+/* Favorite star button */
+.star-btn {
+    color: #FFFFFF;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.star-btn:hover {
+    color: #FFFFFF;
+}
+
+/* Highlight a favorite note */
+.star-btn.is-favorite {
+    color: #ffca28;
+}
+
+/* Highlight the active sidebar item */
+.sidebar li.active {
+    background-color: #1B3154;
+    color: #FFFFFF;
+    border: 1px solid #444650;
+}
+
+/* Sidebar transition */
+.sidebar li {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Expanded note appears in the center of the screen */
+.note-card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: min(750px, 90vw);
+    height: auto;
+    max-height: 85vh;
+    overflow-y: auto;
+
+    z-index: 1001;
+    background: #0D1930;
+    border: 1px solid #49658E;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
+}
+
+/* Show the full note text when expanded */
+.note-card.expanded p {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+}
+
+/* Dark overlay behind the expanded note */
+.notes-container.has-expanded::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: rgba(3, 8, 20, 0.75);
+    backdrop-filter: blur(5px);
+
+    z-index: 1000;
+}
